@@ -7,20 +7,20 @@ from detectron2.checkpoint import DetectionCheckpointer
 from detectron2.config import get_cfg
 from detectron2.engine import default_argument_parser, default_setup, launch
 
-from adapteacher import add_ateacher_config
+from memory import add_ateacher_config
 # New
-from adapteacher.engine.trainer_mem import ATeacherTrainer
+from memory.engine.trainer_mem import ATeacherTrainer
 
 # hacky way to register
 # New 
-from adapteacher.modeling.meta_arch.rcnn_mem import TwoStagePseudoLabGeneralizedRCNN, DAobjTwoStagePseudoLabGeneralizedRCNN
-from adapteacher.modeling.meta_arch.vgg import build_vgg_backbone  # noqa
+from memory.modeling.meta_arch.rcnn_mem import TwoStagePseudoLabGeneralizedRCNN, DAobjTwoStagePseudoLabGeneralizedRCNN
+from memory.modeling.meta_arch.vgg import build_vgg_backbone  # noqa
 
-from adapteacher.modeling.proposal_generator.rpn import PseudoLabRPN
-from adapteacher.modeling.roi_heads.roi_heads import StandardROIHeadsPseudoLab
-import adapteacher.data.datasets.builtin
+from memory.modeling.proposal_generator.rpn import PseudoLabRPN
+from memory.modeling.roi_heads.roi_heads import StandardROIHeadsPseudoLab
+import memory.data.datasets.builtin
 
-from adapteacher.modeling.meta_arch.ts_ensemble import EnsembleTSModel
+from memory.modeling.meta_arch.ts_ensemble import EnsembleTSModel
   
 
 def setup(args):
