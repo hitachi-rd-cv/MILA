@@ -355,7 +355,7 @@ class ATeacherTrainer(DefaultTrainer):
 
 
 
-            """
+            
             # NEW
             # Memory Update ------> currently running this 4 times (update afte every epoch)
             if (self.iter - self.cfg.SEMISUPNET.BURN_UP_STEP) % self.cfg.SEMISUPNET.ITR_MEM_UPDATE == 0 or self.iter == self.start_iter:
@@ -369,7 +369,7 @@ class ATeacherTrainer(DefaultTrainer):
                 print("--->memory update over for itr:", self.iter)
             
             
-            pdb.set_trace()
+            """
             # save a1 and b1 both --- save all source feature and their crop  
             output = open('memory_feat_comic.pkl', 'wb')
             pickle.dump(self.memory_store, output)
@@ -379,11 +379,10 @@ class ATeacherTrainer(DefaultTrainer):
             
             with open('memory_crop_comic.pkl', "wb") as file:
                 dill.dump(b1, file)
-            """
-           
-           
+
             file = open("memory_feat_comic.pkl",'rb')
             self.memory_store = pickle.load(file)
+            """
             
            
             memory_store_e = self.memory_store[-1]
